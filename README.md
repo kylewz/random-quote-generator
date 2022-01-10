@@ -1,4 +1,4 @@
-# techdegree-fullstack-project-1
+# techdegree-fsjs-proj1
  The Random Quote Generator
 
  Student: Kyle Zvejnieks
