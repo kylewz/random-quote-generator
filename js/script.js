@@ -55,6 +55,7 @@ function getRandomQuote() {
  return quotes[randomIndex];
 };
 
+
 /***
  * `printQuote` function
 ***/
@@ -82,10 +83,12 @@ function printQuote () {
   return document.getElementById('quote-box').innerHTML = quoteHTML;
 };
 
+
 // Function to generate random number 0 and above. Requires parameter "upperBound", the number to go up to, inclusive
 function randomPositiveNum(upperBound){
   return Math.floor( Math.random() * (upperBound + 1) );
 }
+
 
 // Generates a new rgb value and applies to document body background.
 // Thanks to "W3Schools" for reference to change background using document.style: https://www.w3schools.com/jsref/prop_style_background.asp
@@ -94,11 +97,13 @@ function updateBackgroundToRandomRGB() {
   document.body.style.background = newRGB;
 }
 
+
 // Function to update both bg color and load-quote, for use with setInterval()
 function loadQuoteandBGColor (){
   updateBackgroundToRandomRGB();
   printQuote();
 }
+
 
 // Update quote after a set number of milliseconds
 let rotateQuotes = setInterval(loadQuoteandBGColor,7000);
