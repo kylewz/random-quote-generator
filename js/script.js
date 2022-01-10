@@ -78,9 +78,6 @@ function printQuote () {
     quoteHTML += `</p><p class="tags">tags: ${quoteToPrint.tags}`;
 
   quoteHTML += `</p>`;
-
-  // Updates page with random background color on "Show another quote" button
-  updateBackgroundToRandomRGB();
   
   return document.getElementById('quote-box').innerHTML = quoteHTML;
 };
@@ -97,8 +94,14 @@ function updateBackgroundToRandomRGB() {
   document.body.style.background = newRGB;
 }
 
+// Function to update both bg color and load-quote, for use with setInterval()
+function loadQuoteandBGColor (){
+  updateBackgroundToRandomRGB();
+  printQuote();
+}
+
 // Update quote after a set number of milliseconds
-let rotateQuotes = setInterval(printQuote,5000);
+let rotateQuotes = setInterval(loadQuoteandBGColor,7000);
 
 /***
  * Source: Code below provided by Treehouse (project files)
@@ -106,3 +109,4 @@ let rotateQuotes = setInterval(printQuote,5000);
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", updateBackgroundToRandomRGB, false);
